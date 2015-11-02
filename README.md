@@ -1,28 +1,6 @@
-== README
+### Cats of Disneyland 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is dedicated to the cats of Disneyland! Keeping the park 
+save from rats and all other rodent. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+![](https://i.imgur.com/X3j95xJ.jpg =500x)
