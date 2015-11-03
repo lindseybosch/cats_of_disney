@@ -10,6 +10,188 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require rails_bootstrap_forms
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,300,400);
+
+
+@media screen and (max-width: $grid-float-breakpoint) {
+  .above-break { display: none; }
+  .below-break { display: auto; }
+}
+
+@media screen and (min-width: $grid-float-breakpoint) {
+  .above-break { display: auto; }
+  .below-break { display: none; }
+}
+
+*,
+html,
+body {
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 22px;
+  box-sizing: border-box;
+}
+
+body { padding-top: 20px; text-align: center; }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #FF6B6B;
+  font-weight: 400;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.navbar-nav.navbar-right:last-child { margin: 0; }
+.navbar-default { background-color: white; }
+.navbar-toggle,
+.navbar-toggle:hover {
+  border: none;
+  background: none;
+
+  .icon-bar { height: 3px; }
+}
+
+.navbar-nav a {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999;
+  padding: 5px 20px;
+  letter-spacing: .11em;
+  margin-bottom: -1px;
+}
+
+h2.subheading {
+  font-weight: 300;
+  margin: 1em 0 0.5em;
+  font-size: 1.8em;
+}
+
+img.desaturate {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.glyphicon { font-size: 0.8em; }
+.links { margin-top: 1.5em; }
+
+.images,
+.row {
+  padding: 0;
+  width: auto;
+  max-width: 980px;
+}
+
+.flavor {
+  font-size: 1.25em;
+  margin-bottom: 0.35em;
+}
+
+.image-grid {
+  padding: 1px;
+  display: inline-block;
+  width: auto;
+  float:none;
+  margin-right: -4px;
+  position: relative;
+
+  .caption {
+    position: absolute;
+    bottom: 1em;
+    left: 5%;
+    width: 90%;
+    color: #F0F0F0;
+    text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.8);
+    line-height: 1.1em;
+    font-size: 28px;
+  }
+}
+
+.profile-image-container {
+  border: 1px solid black;
+  border-radius: 5px 5px 0 0;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+
+  .caption {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    width: 100%;
+    color: white;
+    line-height: 1.75em;
+
+    .name {
+      font-weight: bold;
+      float: left;
+      padding-left: 15px
+    }
+
+    .votes {
+      font-weight: normal;
+      float: right;
+      padding-right: 15px;
+    }
+  }
+}
+
+.buttons-container {
+
+  margin-top: 1em;
+
+  .button {
+    display: inline-block;
+    width:   80px;
+    height:  80px;
+    border-radius: 40px;
+    cursor:   pointer;
+    position: relative;
+    margin-right: 10px;
+
+    .swipe {
+      border: 1px solid #999;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      line-height: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -25px;
+      margin-left: -25px;
+      background-color: white;
+      font-size: 30px;
+    }
+
+    .left { color: #DE5E3B; }
+    .right { color: #67E38A; }
+  }
+
+  .button:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 40px;
+    background:  -webkit-linear-gradient(
+                    top,
+                    rgba(100,100,100,0.2) 0%,
+                    rgba(180,180,180,0.2) 50%,
+                    rgba(255,255,255,0.2) 100%
+                 );
+  }
+}
