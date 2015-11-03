@@ -1,2 +1,10 @@
-<h1>Image Page</h1>
+<h1 id="imagepage">Image all Feed page</h1>
+
+<%= link_to "Post Image", new_image_path %>
+
+
+<% @images.each do |image| %>
+  <p><%= image.image %></p>
+  <p><%= image.description %></p>
+<% end %>
 
