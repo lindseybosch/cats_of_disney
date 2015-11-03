@@ -1,10 +1,13 @@
 <h1 id="imagepage">Image all Feed page</h1>
 
+<div>
 <%= link_to "Post Image", new_image_path %>
+</div>
 
 
 <% @images.each do |image| %>
-  <p><%= image.image %></p>
+  <p class="container"><%= image_tag(image.image) %></p>
+  <p><%= image.user.name %></p>
   <p><%= image.description %></p>
 <% end %>
 
