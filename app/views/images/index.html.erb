@@ -17,12 +17,11 @@
     </nav>
   </header>
 
-<%= yield %>
 
 
-        <% @images.reverse.each do |image| %>
-        <p class="container"><%= image_tag image.image_img.url(:image_index) %></p>
-        <p class="container"><%= image_tag(image.image) %></p>
-        <p class="posterName"><%= image.user.name %></p>
-        <p class="imageDesc"><%= image.description %></p>
-      <% end %>
+<% @images.reverse.each do |image| %>
+  <p class="container"><%= image_tag image.image_img.url(:image_index) %></p>
+  <p class="container"><%= image_tag(image.image) %></p>
+  <p class="posterName"><%= image.user.name %></p>
+  <p class="imageDesc"><%= image.description %></p>
+<% end %>

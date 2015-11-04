@@ -14,9 +14,17 @@ end
 
 def update
     image = Image.find(params["id"])
-    image.upvote! if params["Like"]
     redirect_to images_path(random: true)
   end
+
+def upvote
+  upvote = Upvote.new
+  upvote.user = current_user
+  image = Image.find(params[:id])
+  upvote.image = image
+  upvote.save
+  redirect_to image_path
+end
 
 def create
   image = Image.new(image_params)

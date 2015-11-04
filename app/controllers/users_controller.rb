@@ -23,7 +23,8 @@ def create
 end
 
 def show
-
+  # @user.images.each do |image|
+  # end
 end
 
 private
