@@ -9,7 +9,7 @@ def new
 end
 
 def show
-  @image = Image.find(params[:id])
+  # @image = Image.find(params[:id])
 end
 
 def update
@@ -36,6 +36,6 @@ def destroy
 end
 
 def image_params
-  params.require(:image).permit(:description, :image)
+  params.require(:image).permit(:description, :image, :image_img)
 end
 end
