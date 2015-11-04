@@ -2,26 +2,13 @@
 <html>
 <head>
   <title>CatsOfDisney</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <%= link_to "Image Feed", root_path %>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <% if current_user %>
-        <%= link_to "Welcome #{current_user.name}", user_path(current_user) %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Log out of account', session_path('dummy'), method: :delete %>
-      <% else %>
-        <%= link_to "Sign Up", new_user_path %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to "Sign In", new_session_path %>
-      <% end %>
-    </nav>
-  </header>
+
 
   <div class="container-fluid">
 

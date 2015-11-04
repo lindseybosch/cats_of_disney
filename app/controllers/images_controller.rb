@@ -25,6 +25,7 @@ def create
 end
 
 def destroy
+  @image = current_user.images.find(params[:id])
   @image.destroy
   redirect_to user_path(current_user)
 end

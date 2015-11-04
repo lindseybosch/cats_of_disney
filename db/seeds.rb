@@ -13,3 +13,6 @@ lin = User.create email:"lin@lin.com", password:"123", name:"Lindsey"
 a = User.create email:"adam@adam.com", password:"123", name:"Adam"
 b = User.create email:"ben@ben.com", password:"123", name:"Ben"
 AL = User.create email: "andrew@andrew.com", password:"123", name:"andrew"
+
+
+

@@ -1,0 +1,17 @@
+<h1>Hello, <% current_user.name %></h1>
+
+    <% current_user.images.each do |post| %>
+    <div>
+      <div id='image'>
+          <img><%= image_tag (post.image) %></img>
+      </div>
+      <div>
+        <%= post.description %>
+      </div>
+      <%= button_to "Delete", image_path(post), :method => :delete, data:
+      {:confirm => "Are You Sure You Want to Delete Your Post?"}%>
+    </div>
+    <% end %>
+<% else %>
+  <h3>No posts found!</h3>
+
