@@ -1,0 +1,12 @@
+#image {
+  overflow: hidden;
+  position: relative;
+  max-height: 200px;
+  max-width: 200px;
+  display: inline-block
+}
+
+#image img {
+  width: 90%;
+  height: auto;
+}

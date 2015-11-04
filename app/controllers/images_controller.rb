@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
 
 def index
-  @images = Image.all.sort_by {|image| image.created_at}.reverse
+  @images = Image.all
 end
 
 def new
@@ -12,6 +12,11 @@ def show
   @image = Image.find(params[:id])
 end
 
+def update
+    image = Image.find(params["id"])
+    image.upvote! if params["Like"]
+    redirect_to images_path(random: true)
+  end
 
 def create
   image = Image.new(image_params)

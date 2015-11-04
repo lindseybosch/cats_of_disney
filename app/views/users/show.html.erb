@@ -17,7 +17,7 @@
 <body>
   <div>user.name</div>
 
-    <% current_user.images.each do |post| %>
+    <% current_user.images.reverse.each do |post| %>
     <div>
       <div id='image'>
           <img><%= image_tag (post.image) %></img>
