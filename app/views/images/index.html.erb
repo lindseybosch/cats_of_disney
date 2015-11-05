@@ -1,22 +1,18 @@
-  <header>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <%= link_to "Cats of Disney", root_path %>
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <%= link_to "Cats of Disney", root_path %>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <% if current_user %>
+      <%= link_to "#{current_user.name}", user_path(current_user) %>
       &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <% if current_user %>
-        <%= link_to "#{current_user.name}", user_path(current_user) %>
-        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <%= link_to "Post Image", new_image_path %>
-
-      <% else %>
-        <%= link_to "Sign Up", new_user_path %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to "Sign In", new_session_path %>
-      <% end %>
-    </nav>
-  </header>
-
-
-
+      <%= link_to "Post Image", new_image_path %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_path %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to "Sign In", new_session_path %>
+    <% end %>
+  </nav>
+</header>
 
 <body>
   <div class="singleFeed" >
@@ -27,17 +23,18 @@
         <p class="container"><%= image_tag image.link.url(:index) %></p>
         <p class="imageDesc"><%= image.description %></p>
 
-  <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
-     <button disabled>Meow Up</button>
-  <% else %>
-        <%= button_to "Meow", image_path(image), method: :put %>
-      <% end %>
+    <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
+      <button disabled>Meow Up</button>
+    <% else %>
+      <%= button_to "Meow", image_path(image), method: :put %>
+    <% end %>
+
     <%= image.upvotes %>
     <% end %>
     </div>
-<% else %>
 
-
-    <% end %>
+    <% else %>
   </div>
+    <% end %>
+
 </body>
