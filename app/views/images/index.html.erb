@@ -19,11 +19,18 @@
 
 
 <div class="imageFeed">
+
 <% @images.reverse.each do |image| %>
-  <p class="container"><%= image_tag image.link.url(:index) %></p>
-  <p class="posterName"><%= image.user.name %></p>
-  <p class="imageDesc"><%= image.description %></p>
-  <%= button_to "Like", image_path(image), method: :put %>
-  <%= image.upvotes %>
-<% end %>
+  <div class="singleFeed">
+    <p class="posterName"><%= image.user.name %></p>
+    <p class="container"><%= image_tag image.link.url(:index) %></p>
+    <p class="imageDesc"><%= image.description %></p>
+    <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
+      <button disabled>Meow Up</button>
+    <% else %>
+      <%= button_to "Like", image_path(image), method: :put %>
+      <%= image.upvotes %>
+    <% end %>
+  <% end %>
+  </div>
 </div>
