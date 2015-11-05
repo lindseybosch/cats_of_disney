@@ -18,16 +18,15 @@ ActiveRecord::Schema.define(version: 20151104205113) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "image"
     t.string   "description"
     t.string   "comment"
     t.integer  "like"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "image_img_file_name"
-    t.string   "image_img_content_type"
-    t.integer  "image_img_file_size"
-    t.datetime "image_img_updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "link_file_name"
+    t.string   "link_content_type"
+    t.integer  "link_file_size"
+    t.datetime "link_updated_at"
   end
 
   add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree

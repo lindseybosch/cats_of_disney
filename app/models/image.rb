@@ -8,6 +8,6 @@ class Image < ActiveRecord::Base
     upvote_instances.length
   end
 
-  has_attached_file :image_img, styles: { image_index: "250x350>", image_show: "325x475>" }
-  validates_attachment_content_type :image_img, content_type: /\Aimage\/.*\Z/
+  has_attached_file :link, styles: { index: "250x350>", show: "325x475>" }
+  validates_attachment_content_type :link, content_type: /\Aimage\/.*\Z/
 end

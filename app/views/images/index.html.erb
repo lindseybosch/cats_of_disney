@@ -18,10 +18,12 @@
   </header>
 
 
-
+<div class="imageFeed">
 <% @images.reverse.each do |image| %>
-  <p class="container"><%= image_tag image.image_img.url(:image_index) %></p>
-  <p class="container"><%= image_tag(image.image) %></p>
+  <p class="container"><%= image_tag image.link.url(:index) %></p>
   <p class="posterName"><%= image.user.name %></p>
   <p class="imageDesc"><%= image.description %></p>
+  <%= button_to "Like", image_path(image), method: :put %>
+  <%= image.upvotes %>
 <% end %>
+</div>

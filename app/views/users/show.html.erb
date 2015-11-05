@@ -17,15 +17,15 @@
 <body>
   <div>user.name</div>
 
-    <% current_user.images.reverse.each do |post| %>
+    <% current_user.images.reverse.each do |image| %>
     <div>
       <div id='image'>
-          <img><%= image_tag (post.image) %></img>
+          <img><%= image_tag image.link.url(:show) %></img>
       </div>
       <div>
-        <%= post.description %>
+        <%= image.description %>
       </div>
-      <%= button_to "Delete", image_path(post), :method => :delete, data:
+      <%= button_to "Delete", image_path(image), :method => :delete, data:
       {:confirm => "Are You Sure You Want to Delete Your Post?"}%>
     </div>
     <% end %>
