@@ -31,7 +31,7 @@
   .below-break { display: none; }
 }
 
-*,
+
 html,
 body {
   font-family: 'Lato';
@@ -40,6 +40,9 @@ body {
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
 body { padding-top: 20px; text-align: center; }
 
 #firstblock { padding-top: 61px}

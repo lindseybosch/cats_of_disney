@@ -1,1 +1,25 @@
-index.html.erb
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <%= link_to "Cats of Disney", root_path %>
+    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <%= link_to "#{current_user.name.capitalize}", user_path(current_user) %>
+      &nbsp;&nbsp;&nbsp;
+  </nav>
+</header>
+
+<body>
+<div>
+From a Cat’s Point of View
+
+The Disneyland Cats have been around for as long as any of us can remember.
+Our ancestors lived in Sleeping Beauty Castle before we were unceremoniously evicted.
+Ever since then, we’ve prowled the streets and walkways of Disneyland (and more recently Disney California Adventure).
+When it comes right down to it, we run the place. Without us, rodents would run amuck and the entire population of Disneyland
+would be a lot less cute. We put up with the humans visiting our quarters, but only because they leave at night. There are
+magical food stations positioned for us all around the property, and we get to eat whenever we like. Nowhere is off limits to us.
+Disneyland is OUR land. And we try our best to forget it was “all started by a mouse.”
+</div>
+
+
+</body>
+

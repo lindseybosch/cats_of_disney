@@ -3,9 +3,11 @@
     <%= link_to "Cats of Disney", root_path %>
     &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <% if current_user %>
-      <%= link_to "#{current_user.name}", user_path(current_user) %>
+      <%= link_to "#{current_user.name.capitalize}", user_path(current_user) %>
       &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <%= link_to "Post Image", new_image_path %>
+      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <%= link_to "Cat History", users_path %>
     <% else %>
       <%= link_to "Sign Up", new_user_path %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -15,26 +17,27 @@
 </header>
 
 <body>
-  <div class="singleFeed" >
+  <div class="container" id="welcome">
     <% if current_user %>
       <% @images.reverse.each do |image| %>
-      <div class="Feed">
-        <p class="posterName"><%= image.user.name %></p>
-        <p class="container"><%= image_tag image.link.url(:index) %></p>
+      <div class="panel panel-default" class="space">
+        <p class="posterName"><%= image.user.name.capitalize %></p>
+        <p><%= image_tag image.link.url(:index) %></p>
         <p class="imageDesc"><%= image.description %></p>
 
-    <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
-      <button disabled>Meow Up</button>
-    <% else %>
-      <%= button_to "Meow", image_path(image), method: :put %>
-    <% end %>
+          <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
+            <button disabled>Meow Up</button>
+          <% else %>
+            <%= button_to "Meow", image_path(image), method: :put %>
+          <% end %>
 
-    <%= image.upvotes %>
-    <% end %>
-    </div>
-
-    <% else %>
+        <%= image.upvotes %>
+      </div>
+      <% end %>
   </div>
+    <% else %>
+      <div class="disneyimage">
+      </div>
     <% end %>
 
 </body>
