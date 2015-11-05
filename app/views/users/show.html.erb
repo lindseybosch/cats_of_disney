@@ -18,7 +18,7 @@
   <div>user.name</div>
 
     <% current_user.images.reverse.each do |image| %>
-    <div>
+    <div class="profile">
       <div id='image'>
           <img><%= image_tag image.link.url(:show) %></img>
       </div>

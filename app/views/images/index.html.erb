@@ -7,8 +7,6 @@
         &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
         <%= link_to "Post Image", new_image_path %>
 
-
-
       <% else %>
         <%= link_to "Sign Up", new_user_path %>
         &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -18,19 +16,28 @@
   </header>
 
 
-<div class="imageFeed">
 
-<% @images.reverse.each do |image| %>
-  <div class="singleFeed">
-    <p class="posterName"><%= image.user.name %></p>
-    <p class="container"><%= image_tag image.link.url(:index) %></p>
-    <p class="imageDesc"><%= image.description %></p>
-    <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
-      <button disabled>Meow Up</button>
-    <% else %>
-      <%= button_to "Like", image_path(image), method: :put %>
-      <%= image.upvotes %>
+
+<body>
+  <div class="singleFeed" >
+    <% if current_user %>
+      <% @images.reverse.each do |image| %>
+      <div class="Feed">
+        <p class="posterName"><%= image.user.name %></p>
+        <p class="container"><%= image_tag image.link.url(:index) %></p>
+        <p class="imageDesc"><%= image.description %></p>
+
+  <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
+     <button disabled>Meow Up</button>
+  <% else %>
+        <%= button_to "Meow", image_path(image), method: :put %>
+      <% end %>
+    <%= image.upvotes %>
     <% end %>
-  <% end %>
+    </div>
+<% else %>
+
+
+    <% end %>
   </div>
-</div>
+</body>

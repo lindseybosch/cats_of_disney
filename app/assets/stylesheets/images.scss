@@ -1,52 +1,32 @@
 
 .container {
-  //   border: 1px solid black;
-  // border-radius: 5px 5px;
-  // display: inline-block;
+  display: inline-block;
   overflow: hidden;
   position: relative;
-  max-height: 200px;
+  max-height: 150px;
   max-width: 200px;
 
 }
 
 .container img {
   width: 90%;
-  height: auto;
+  height: 30%;
 }
 
-.imageFeed {
-  margin-top: 46px;
-}
+
 
 .posterName{
   color: blue;
 }
 
+
+
 .singleFeed {
-  border: 1px solid gray;
-  // margin-right: 40%;
-  // margin-left: 40%;
+border: 1px solid black;
+display: inline-block;
 }
 
 
 
-// .navbar-nav.navbar-right:last-child { margin: 0; }
-// .navbar-default { background-color: white; }
-// .navbar-toggle,
-// .navbar-toggle:hover {
-//   border: none;
-//   background: none;
 
-//   .icon-bar { height: 3px; }
-// }
-
-// .navbar-nav a {
-//   text-transform: uppercase;
-//   font-size: 14px;
-//   color: #999;
-//   padding: 5px 20px;
-//   letter-spacing: .11em;
-//   margin-bottom: -1px;
-// }
 
