@@ -30,7 +30,7 @@
             <link disabled class="glyphicon glyphicon-heart"></link>
             &nbsp;&nbsp;|&nbsp;&nbsp;
           <% else %>
-            <%= link_to "", image_path(image), method: :put, :class => "glyphicon glyphicon-heart-empty" %>
+            <%= link_to "", upvote_path(image), method: :put, :class => "glyphicon glyphicon-heart-empty" %>
             &nbsp;&nbsp;|&nbsp;&nbsp;
           <% end %>
 

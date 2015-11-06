@@ -17,13 +17,8 @@ class ImagesController < ApplicationController
   end
 
   def update
-    upvote = Upvote.new
-    upvote.user = current_user
-    image = Image.find(params[:id])
-    upvote.image = image
-    upvote.save
-    # @image = Image.find(params[:id])
-    # @image.update(image_params)
+    @image = Image.find(params[:id])
+    @image.update(image_params)
     redirect_to root_path
   end
 
@@ -43,6 +38,7 @@ class ImagesController < ApplicationController
     @image.destroy
     redirect_to user_path(current_user)
   end
+
 
   def image_params
     params.require(:image).permit(:description, :link)

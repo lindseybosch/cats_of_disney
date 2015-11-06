@@ -9,6 +9,8 @@ resources :images, only: [:index, :new, :show, :create, :destroy, :update, :edit
 
 resources :profiles, only: [:index]
 
+resources :upvotes, only: [:update]
+
 get '/upvote/:id', to: 'images#upvote'
 
 get '/login', to: 'session#new'
