@@ -4,7 +4,7 @@
 https://aqueous-brushlands-4920.herokuapp.com/
 
 I decided to make a application that allows you to post images of the cats that live inside the Disneyland 
-Park because it something my family and friends do when we go to Disneyland. Count how many cats we see and take pictures of them. I thought it would be great to have a app dedicated to these disney cats!
+Park because it something my family and friends do when they go to Disney Park. We usually count how many cats we see and take pictures of them. I thought it would be great to have a app dedicated to these disney cats!
 ![](https://i.imgur.com/EzHfnqj.png =300x)
 *******
 ![](https://i.imgur.com/QsRfXNe.png =300x)
@@ -19,7 +19,8 @@ https://trello.com/b/O03kYuG2/cats-of-disney
 ####Technology Used: 
 * Ruby
 * Rails
-* Postgresql (for database) 
+* Postgresql (for database)
+* HTML
 
 
 ####Design 
