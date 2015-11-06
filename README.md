@@ -26,6 +26,8 @@ https://trello.com/b/O03kYuG2/cats-of-disney
 * CSS Bootstrap (for design) 
 * Paperclip (for uploading images)
 * Used a third party site to hosting images 
+I wanted to make my app very simple, easy to use, and clean design. 
+I wanted it to have a design very similar to Instagram because I like the clean and to the point interface.
 
 ####Get started 
 * Create a account
