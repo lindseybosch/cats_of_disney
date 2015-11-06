@@ -34,7 +34,9 @@ https://trello.com/b/O03kYuG2/cats-of-disney
 * Click the Image icon to share your Disney cat
 
 ####Next Step 
-
+* Allow users to follow other users
+* Allow users to comment on other users post
+* Allow users to search for other users by name
 
 ********
 ![](https://i.imgur.com/NwbB8Gz.jpg =300x)
