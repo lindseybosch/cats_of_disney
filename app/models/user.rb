@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :uploads, class_name: "Image"
-  has_and_belongs_to_many :upvoted, class_name: "Image"
+  has_many :upvoted, class_name: "Image", through: :upvotes
 
 
    has_secure_password

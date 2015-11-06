@@ -1,8 +1,8 @@
 class Image < ActiveRecord::Base
   belongs_to :user
-  has_many :upvote_instances, class_name: "Upvote"
+  has_many :upvote_instances, class_name: "Upvote", dependent: :destroy
   belongs_to :uploader, class_name: "User"
-  has_and_belongs_to_many :upvoted_by, class_name: "User"
+  has_many :upvoted_by, class_name: "User", through: :upvotes
 
   def upvotes
     upvote_instances.length
