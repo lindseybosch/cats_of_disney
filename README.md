@@ -7,5 +7,25 @@ Park because it something my family and friends do when we go to Disneyland. Cou
 ![](https://i.imgur.com/EzHfnqj.png =300x)
 *******
 ![](https://i.imgur.com/QsRfXNe.png =300x)
+
+####Trello 
+![](https://trello.com/b/O03kYuG2/cats-of-disney =300x)
+
+####Technology Used: 
+* Ruby
+* Rails
+* Postgresql (for database) 
+
+
+####Design 
+* CSS Bootstrap (for design) 
+* Paperclip (for uploading images)
+* Used a third party site to hosting images 
+
+####Get started 
+
+Next Step 
+
+
 ********
 ![](https://i.imgur.com/NwbB8Gz.jpg =300x)
