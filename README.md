@@ -9,7 +9,11 @@ Park because it something my family and friends do when we go to Disneyland. Cou
 ![](https://i.imgur.com/QsRfXNe.png =300x)
 
 ####Trello 
-![](https://trello.com/b/O03kYuG2/cats-of-disney =300x)
+https://trello.com/b/O03kYuG2/cats-of-disney
+* Wireframing
+* ERD Models 
+* Project Management 
+
 
 ####Technology Used: 
 * Ruby
@@ -23,8 +27,12 @@ Park because it something my family and friends do when we go to Disneyland. Cou
 * Used a third party site to hosting images 
 
 ####Get started 
+* Create a account
+* Go to Image feed to see other users post
+* Go to Disneyland and capture your own Disney cat images to share
+* Click the Image icon to share your Disney cat
 
-Next Step 
+####Next Step 
 
 
 ********
