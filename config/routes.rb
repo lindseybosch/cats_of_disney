@@ -5,7 +5,7 @@ resources :users, only: [:index, :new, :create, :show]
 
 resource :session, only: [:new, :create, :destroy]
 
-resources :images, only: [:index, :new, :show, :create, :destroy, :update]
+resources :images, only: [:index, :new, :show, :create, :destroy, :update, :edit]
 
 resources :profiles, only: [:index]
 

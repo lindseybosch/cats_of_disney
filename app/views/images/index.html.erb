@@ -1,14 +1,15 @@
 <header>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <%= link_to "Cats of Disney", root_path %>
-    &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
     <% if current_user %>
       <%= link_to "#{current_user.name.capitalize}", user_path(current_user) %>
-      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <%= link_to "Post Image", new_image_path %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      <%= link_to "", new_image_path, :class => "glyphicon glyphicon-camera" %>
       &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <%= link_to "Cat History", users_path %>
     <% else %>
+       <%= link_to "Cats of Disney", root_path %>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to "Sign Up", new_user_path %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to "Sign In", new_session_path %>
@@ -16,19 +17,21 @@
   </nav>
 </header>
 
-<body>
+
   <div class="container" id="welcome">
     <% if current_user %>
       <% @images.reverse.each do |image| %>
-      <div class="panel panel-default" class="space">
+      <div class="panel panel-default space center-block">
         <p class="posterName"><%= image.user.name.capitalize %></p>
         <p><%= image_tag image.link.url(:index) %></p>
         <p class="imageDesc"><%= image.description %></p>
 
           <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
-            <button disabled>Meow Up</button>
+            <link disabled class="glyphicon glyphicon-heart"></link>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
           <% else %>
-            <%= button_to "Meow", image_path(image), method: :put %>
+            <%= link_to "", image_path(image), method: :put, :class => "glyphicon glyphicon-heart-empty" %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
           <% end %>
 
         <%= image.upvotes %>
@@ -37,7 +40,19 @@
   </div>
     <% else %>
       <div class="disneyimage">
+      <style>
+        body {
+          background: url("https://i.imgur.com/aHrVj7o.png");
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+
+
+      </style>
       </div>
     <% end %>
 
-</body>
+

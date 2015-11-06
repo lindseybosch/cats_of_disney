@@ -1,5 +1,6 @@
 <h1>Log in to account</h1>
 <p id="alert"><%= alert %></p>
+
 <%= form_tag session_path do %>
   <div class="field">
     <%= label_tag :email %>
@@ -11,3 +12,6 @@
   </div>
   <div class="actions"><%= submit_tag "Log in" %></div>
 <% end %>
+
+
+

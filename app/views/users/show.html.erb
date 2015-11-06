@@ -3,9 +3,9 @@
     <%= link_to "Cats of Disney", root_path %>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <% if current_user %>
-       <%= link_to "#{current_user.name.capitalize}", user_path(current_user) %>
+       <%= link_to "", new_image_path, :class => "glyphicon glyphicon-camera" %>
      &nbsp;&nbsp;|&nbsp;&nbsp;
-     <%= link_to 'Log out of account', session_path('dummy'), method: :delete %>
+     <%= link_to 'Log out', session_path('dummy'), method: :delete %>
      <% else %>
       <%= link_to "Sign Up", new_user_path %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -14,24 +14,36 @@
   </nav>
 </header>
 
-<body>
-  <div>user.name</div>
 
-    <% current_user.images.reverse.each do |image| %>
-    <div class="profile">
-      <div id='image'>
-          <img><%= image_tag image.link.url(:show) %></img>
+
+<div class="container" id="welcome">
+      <% current_user.images.reverse.each do |image| %>
+      <div class="panel panel-default space center-block">
+        <p class="posterName"><%= image.user.name.capitalize %></p>
+        <p><%= image_tag image.link.url(:index) %></p>
+        <p class="imageDesc"><%= image.description %></p>
+
+        <% if image.upvote_instances.where(user_id:current_user).length > 0 %>
+          <link disabled class="glyphicon glyphicon-heart"></link>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+           <%= image.upvotes %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+           <%= link_to "", image_path(image), :method => :delete, data:
+            {:confirm => "Are You Sure You Want to Delete Your Post?"}, :class => "glyphicon glyphicon-trash" %>
+        <% else %>
+          <%= link_to "", image_path(image), method: :put, :class => "glyphicon glyphicon-heart-empty" %>
+           &nbsp;&nbsp;|&nbsp;&nbsp;
+           <%= image.upvotes %>
+           &nbsp;&nbsp;|&nbsp;&nbsp;
+           <%= link_to "", image_path(image), :method => :delete, data:
+            {:confirm => "Are You Sure You Want to Delete Your Post?"}, :class => "glyphicon glyphicon-trash" %>
+
       </div>
-      <div>
-        <%= image.description %>
-      </div>
-      <%= button_to "Delete", image_path(image), :method => :delete, data:
-      {:confirm => "Are You Sure You Want to Delete Your Post?"}%>
-    </div>
-    <% end %>
-<% else %>
-  <h3></h3>
-</body>
+        <% end %>
+
+</div>
+      <% end %>
+
 
 
 

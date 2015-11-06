@@ -16,15 +16,20 @@ border: 1px solid black;
 display: inline-block;
 }
 
-.disneyimage {
-  background: url("cats_of_disney.png");
-  width: 1000px;
-  height: 600px;
-  background-size: cover;
-}
+
 
 #firstblock {
   background-color: pink;
   padding-left: 40%
 }
 
+.space {
+  max-width: 40%;
+  max-height: 40%;
+  // display: inline-block;
+  position: center;
+}
+
+#welcome {
+  padding-top: 3%;
+}

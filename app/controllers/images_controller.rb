@@ -9,7 +9,11 @@ class ImagesController < ApplicationController
   end
 
   def show
-    # @image = Image.find(params[:id])
+
+  end
+
+  def edit
+    @image = Image.find(params[:id])
   end
 
   def update
@@ -18,6 +22,8 @@ class ImagesController < ApplicationController
     image = Image.find(params[:id])
     upvote.image = image
     upvote.save
+    # @image = Image.find(params[:id])
+    # @image.update(image_params)
     redirect_to root_path
   end
 
@@ -41,6 +47,8 @@ class ImagesController < ApplicationController
   def image_params
     params.require(:image).permit(:description, :link)
   end
+
+
 
 
 end
